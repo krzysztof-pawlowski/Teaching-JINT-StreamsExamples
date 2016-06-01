@@ -11,17 +11,13 @@ import java.util.stream.Collectors;
 
 public class CollectionsOperations {
 
-    private static List<Album> albums;
-
-    private static void initAlbumsList() {
-        Album album1 = new Album("Celebration Day", "Led Zeppelin", Album.Genre.ROCK, 2013);
-        Album album2 = new Album("A Night At The Opera", "Queen", Album.Genre.ROCK, 1975);
-        Album album3 = new Album("A Day At The Races", "Queen", Album.Genre.ROCK, 1976);
-        Album album4 = new Album("Piano", "Leszek Mozdzer", Album.Genre.JAZZ, 2004);
-        Album album5 = new Album("Doo-bop", "Miles Davis", Album.Genre.JAZZ, 1992);
-
-        albums = Arrays.asList(album1, album2, album3, album4, album5);
-    }
+    private static List<Album> albums = Arrays.asList(
+        new Album("Celebration Day", "Led Zeppelin", Album.Genre.ROCK, 2013),
+        new Album("A Night At The Opera", "Queen", Album.Genre.ROCK, 1975),
+        new Album("A Day At The Races", "Queen", Album.Genre.ROCK, 1976),
+        new Album("Piano", "Leszek Mozdzer", Album.Genre.JAZZ, 2004),
+        new Album("Doo-bop", "Miles Davis", Album.Genre.JAZZ, 1992)
+    );
 
     private static void printCapitalizedAlbumName(List<Album> albums, Predicate<Album> predicate) {
         for (Album album : albums) {
@@ -32,8 +28,6 @@ public class CollectionsOperations {
     }
 
     public static void main(String[] args) {
-
-        initAlbumsList();
 
         // get capitalized names of albums by Queen after 1975
 
